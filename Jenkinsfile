@@ -6,7 +6,8 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-              sh "./provision.sh ${params.sample}"
+                sh "chmod -x provision.sh"
+                sh "./provision.sh ${params.sample}"
             }
         }
     }
