@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-              echo 'Hello ${params.sample}'
+              echo "Hello ${params.sample}"
             }
         }
     }
