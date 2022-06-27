@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Chello') {
          when {
-         not{${sample}}
+         not{"${sample}"}
          }
             steps {
                 sh "chmod u+x provision.sh"
