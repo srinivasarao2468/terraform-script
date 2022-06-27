@@ -7,7 +7,16 @@ pipeline {
         stage('Hello') {
             steps {
                 sh "chmod u+x provision.sh"
-                sh "./provision.sh ${params.sample}"
+                sh "./provision.sh ${sample}"
+            }
+        }
+        stage('Chello') {
+         when {
+         not{${sample}}
+         }
+            steps {
+                sh "chmod u+x provision.sh"
+                sh "./provision.sh ${sample}"
             }
         }
     }
