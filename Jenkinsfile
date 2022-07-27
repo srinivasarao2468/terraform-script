@@ -11,4 +11,9 @@ pipeline {
             }
         }
     }
+    post {
+       always {
+            archiveArtifacts artifacts: 'terraform.tfvars', onlyIfSuccessful: true, fingerprint: true
+        }
+    }
 }
